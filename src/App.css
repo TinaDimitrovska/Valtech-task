@@ -1,38 +1,274 @@
 .App {
   text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.top {
+  background-color: black;
+  height: 42px;
+  padding-top: 1px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
+  color: beige;
+  font-size: 18.5px;
+}
+.main-div {
+  text-align: center;
+  margin-top: 60px;
+}
+.main-div > h1 {
+  font-weight: bolder;
+  margin-bottom: 5px;
+}
+.main-div > p {
+  margin-top: 0;
+}
+form {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-direction: column;
+  padding-top: 15px;
+}
+label {
+  font-weight: bolder;
+  text-transform: uppercase;
+  font-size: 12px;
+  margin-top: 10px;
+}
+.inp {
+  width: 20%;
+  padding: 10px 20px;
+  margin: 10px 0;
+  border: 2px solid black;
+  border-radius: 0px;
+  box-sizing: border-box;
+}
+.sub {
+  background-color: black;
+  color: white;
+  padding: 3px 25px;
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: bolder;
+  margin-top: 20px;
+  text-decoration: none;
+  border: 1px solid black;
+  cursor: pointer;
+}
+.sub:hover {
+  background-color: white;
+  color: black;
+}
+footer {
+  background-color: black;
+  height: 195px;
+  position: relative;
+  bottom: 0;
+  margin-top: 155px;
+}
+.image {
+  width: 480px;
+  height: 350px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -45%);
+}
+.albums {
+  border: 2px solid white;
+  color: white;
+  position: relative;
+  left: 30%;
+  top: 10%;
+  transform: translate(-30%, -167%);
+  background-color: black;
+  padding: 2px 15px;
+  font-size: 9px;
+  text-transform: uppercase;
+}
+.grid {
+  display: grid;
+  gap: 16px;
+  padding: 10px 185px;
+  --row-height: 200px;
+  --num-cols: 3;
+  grid-template-columns: repeat(var(--num-cols), 1fr);
+  grid-auto-rows: var(--row-height);
+  position: relative;
+}
+.grid > div {
+  padding: 10px 0;
+  position: relative;
+}
+.grid div > img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  cursor: pointer;
+}
+.item1009,
+.item1010 .item1014,
+.item1016 {
+  grid-column: span 1;
+}
+
+.item101,
+.item1011,
+.item1012,
+.item1015,
+.item1018,
+.item1019 {
+  grid-row: span 2;
+  grid-column: span 1;
+}
+.over-btn {
+  position: absolute;
+  width: 372px;
+  text-align: center;
+  display: none;
+  transition: opacity 0.35s ease;
+  border: 1px solid black;
+  background-color: black;
+  color: white;
+  z-index: 2;
+  bottom: 10px;
+  padding: 15px 0px;
+  text-transform: uppercase;
+  font-size: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.grid div:hover > .over-btn {
+  display: block;
+}
+.buttons {
+  margin-top: 20px;
+}
+.add {
+  margin-right: 10px;
+  padding: 3px 5px;
+}
+.add,
+.goBack,
+.cancel,
+.save:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+.add:hover,
+.goBack:hover,
+.cancel:hover {
+  background-color: black;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.download {
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  padding: 4px 10px;
+}
+.add,
+.download,
+.goBack,
+.save,
+.cancel {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 9px;
+  cursor: pointer;
+}
+.img-detail {
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+  margin-top: 20px;
+}
+.p1 {
+  margin-bottom: 0;
+  font-weight: bolder;
+  text-transform: uppercase;
+  font-size: 10px;
+}
+.p2 {
+  margin-top: 5px;
+  font-weight: bold;
+  font-size: 17px;
+  margin-bottom: 0;
+}
+small {
+  color: rgb(175, 175, 175);
+  opacity: 1;
+  font-size: 9px;
+}
+.link {
+  margin-top: 20px;
+}
+.goBack {
+  padding: 3px 20px;
+  text-decoration: none;
+}
+.err {
+  color: red;
+  font-size: 12px;
+  margin-top: 2px;
+}
+.modal {
+  position: fixed;
+  z-index: 9999;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  overflow: auto;
+  background-color: white;
+  border: 3px solid black;
+  width: 320px;
+  height: 230px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.modal-body {
+  margin-top: 35px;
+}
+.createm,
+.addm {
+  font-size: 9px;
+  text-transform: uppercase;
+  margin-right: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.createm {
+  color: black;
+}
+.addm {
+  color: grey;
+}
+.modal-footer {
+  margin-top: 35px;
+}
+.save {
+  background-color: black;
+  color: white;
+  padding: 3px 25px;
+  border: 1px solid black;
+}
+.cancel {
+  padding: 3px 25px;
+  margin-right: 15px;
+}
+.footer-msg {
+  background-color: black;
+  color: white;
+  width: 100%;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 50px;
+  z-index: 99999999;
+  position: fixed;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -100%);
 }
